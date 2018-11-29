@@ -23,21 +23,21 @@ function groceries(state = initialState, action) {
       return state.filter(item => item.id !== action.key);
     case EDIT:
       return state.map(
-        post => (post.id === action.key ? { ...post, editMode: !post.editMode } : post),
+        item => (item.id === action.key ? { ...item, editMode: !item.editMode } : item),
       );
     case CHECK:
       return state.map(
-        post => (post.id === action.key ? { ...post, checked: !post.checked } : post),
+        item => (item.id === action.key ? { ...item, checked: !item.checked } : item),
       );
     case UPDATE:
       return state.map(
-        post =>
-          post.id !== action.key ? post : { ...post, name: action.name, editMode: !post.editMode },
+        item =>
+          item.id !== action.key ? item : { ...item, name: action.name, editMode: !item.editMode },
       );
     case INCREASE:
-      return state.map(post => (post.id !== action.key ? post : { ...post, qt: post.qt + 1 }));
+      return state.map(item => (item.id !== action.key ? item : { ...item, qt: item.qt + 1 }));
     case DECREASE:
-      return state.map(post => (post.id !== action.key ? post : { ...post, qt: post.qt - 1 }));
+      return state.map(item => (item.id !== action.key ? item : { ...item, qt: item.qt - 1 }));
     default:
       return state;
   }
