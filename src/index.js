@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import groceriesApp from './reducers';
 import AppContainer from 'components/AppContainer';
 import './index.css';
+import { save, load } from 'redux-localstorage-simple';
 
-const store = createStore(groceriesApp);
-
+const createStoreWithMiddleware = applyMiddleware(
+  save(), // Saving done here
+)(createStore);
+const store = createStoreWithMiddleware(
+  groceriesApp,
+  load(), // Loading done here
+);
 ReactDOM.render(
   <Provider store={store}>
     <AppContainer />
