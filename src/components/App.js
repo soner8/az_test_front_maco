@@ -54,7 +54,6 @@ class App extends Component {
             alt="logo"
             src="https://is4-ssl.mzstatic.com/image/thumb/Purple118/v4/3a/89/d6/3a89d6d9-fedc-5934-163f-00238b98de7f/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-10.png/246x0w.jpg"
           />
-          <button onClick={this.suggest}>Need Suggestions ?</button>
         </div>
         <ul className="List">
           <input type="text" onKeyPress={this.onKeyPress} placeholder="Add an item..." />

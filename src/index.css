@@ -46,7 +46,9 @@ input {
   margin: 40px;
   box-shadow: 10px 10px 5px #aaaaaa;
   min-height: 100px;
-  padding:20px
+  padding:20px;
+  width: auto;
+
 }
 li {
   border-bottom: 1px solid gray;
@@ -55,7 +57,7 @@ li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 20px
+  margin: 20px;
 }
 input[type="text"] {
   width: 100%;

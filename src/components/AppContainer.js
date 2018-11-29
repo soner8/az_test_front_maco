@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { addGroceryItem, increase } from 'actions';
+import { addGroceryItem } from 'actions';
 import App from 'components/App';
 
 function mapStateToProps({ groceries }) {
