@@ -8,6 +8,9 @@ import {
   CHECK,
   INCREASE,
   DECREASE,
+  ALL,
+  CHECKED,
+  UNCHECKED,
 } from './actions';
 
 const initialState = new Immutable.List([
@@ -38,6 +41,12 @@ function groceries(state = initialState, action) {
       return state.map(item => (item.id !== action.key ? item : { ...item, qt: item.qt + 1 }));
     case DECREASE:
       return state.map(item => (item.id !== action.key ? item : { ...item, qt: item.qt - 1 }));
+    case ALL:
+      return state.map(item => item);
+    case CHECKED:
+      return state.filter(item => item.checked);
+    case UNCHECKED:
+      return state.filter(item => !item.checked);
     default:
       return state;
   }

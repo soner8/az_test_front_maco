@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { addGroceryItem } from 'actions';
+import { addGroceryItem, showAll, showChecked, showUnchecked } from 'actions';
 import App from 'components/App';
 
 function mapStateToProps({ groceries }) {
@@ -10,6 +10,9 @@ function mapStateToProps({ groceries }) {
 function mapDispatchToProps(dispatch) {
   return {
     addGroceryItem: item => dispatch(addGroceryItem(item)),
+    showAll: item => dispatch(showAll(item)),
+    showChecked: item => dispatch(showChecked(item)),
+    showUnchecked: item => dispatch(showUnchecked(item)),
     editItem: id => dispatch({ type: 'EDIT', key: id }),
     checkItem: id => dispatch({ type: 'CHECK', key: id }),
     deleteGroceryItem: id => dispatch({ type: 'DELETE_GROCERY_ITEM', key: id }),
